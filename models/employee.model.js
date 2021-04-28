@@ -36,6 +36,7 @@ const employeeSchema = new Schema(
     },
     address: {
       type: String,
+      required: true,
     },
   },
   {
