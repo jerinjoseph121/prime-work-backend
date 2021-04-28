@@ -28,6 +28,10 @@ connection.once("open", () => {
 app.use("/tasks", tasksRouter);
 app.use("/employees", employeesRouter);
 
+if (process.env.NODE_ENV === "production") {
+  app.use(express.static("client/build"));
+}
+
 app.listen(port, () => {
   console.log(`Server is running on port: ${port}`);
 });
